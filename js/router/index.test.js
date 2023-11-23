@@ -34,7 +34,7 @@ describe('unit test for DOM', () => {
         expect(getByTestId(document.body,"sensor-detail-title").textContent).toEqual("Détails du capteur #7")
     })
 
-    it('should display captors details page', async() => {
+    it('should display add captors page', async() => {
         document.body.innerHTML = 
             `<div id="root">
             </div>`
