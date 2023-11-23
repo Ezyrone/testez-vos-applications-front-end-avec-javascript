@@ -54,8 +54,11 @@ describe('integration test', () => {
 
         // On simule un click sur le boutton pour submit la requete
         userEvent.click(getByRole(document.body,"button"));
-        
+
         // On s'attend a ne pas recevoir de message d'erreur
-        expect(getByTestId(document.body, "user-password-error-msg")).toHaveClass("hidden")
+        expect(getByTestId(document.body, "user-password-error-msg")).toHaveClass("hidden");
+
+        // On vérifie si il y a une erreur
+        expect(getByTestId(document.querySelector(".sign-in-form"), "user-password-error-msg")).toBeTruthy();
     })
 })
