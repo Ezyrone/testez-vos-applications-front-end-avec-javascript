@@ -47,11 +47,14 @@ describe('integration test', () => {
 
     it('should return  0 error message for good password input and good mail', () => {
         // On simule l'entrée thomas@facadia.com qui est la bonne adresse mail
-        document.querySelector('#user-email').value = "thomas@facadia.com"
+        document.querySelector('#user-email').value = "thomas@facadia.com";
+
         // On simule le bon mot de passe
-        document.querySelector('#user-password').value = "azerty"
+        document.querySelector('#user-password').value = "azerty";
+
         // On simule un click sur le boutton pour submit la requete
-        userEvent.click(getByRole(document.body,"button"))
+        userEvent.click(getByRole(document.body,"button"));
+        
         // On s'attend a ne pas recevoir de message d'erreur
         expect(getByTestId(document.body, "user-password-error-msg")).toHaveClass("hidden")
     })
